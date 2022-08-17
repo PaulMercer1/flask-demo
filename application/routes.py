@@ -16,9 +16,8 @@ def index(error=None):
 def add():
     form = BasicForm(request.form)
 
-    if form.validate_on_submit():
-        db.session.add(Games(name=form.name.data))
-        db.session.commit()
+    db.session.add(Games(name=form.name.data))
+    db.session.commit()
 
     error = next(iter(form.name.errors), None)
     return redirect(url_for('index', error=error))
