@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   web:
-    image: flaskdemo
+    image: paulmercer/flaskdemo
     environment:
       - db_connection=mysql+pymysql://flask:flask@db:3306/demoflask
       - PYTHONUNBUFFERED=1
