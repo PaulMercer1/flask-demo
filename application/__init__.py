@@ -11,6 +11,7 @@ app.config.update(
     SECRET_KEY=secrets.token_hex(8)
 )
 
+# Create db object
 db = SQLAlchemy(app)
 
 from application import routes
