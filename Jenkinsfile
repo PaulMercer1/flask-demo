@@ -36,9 +36,8 @@ pipeline{
             stage ("Clean up"){
                 steps {
                     script {
-                        sh "docker rmi $registry:$BUILD_NUMBER"
-                        sh "docker rmi $registry:latest"
-                    }
+                        sh 'docker image prune --all --force --filter "until=168h"'
+                           }
                 }
             }            
         }       
