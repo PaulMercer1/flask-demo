@@ -34,3 +34,5 @@ def createdb():
         except Exception as ex:
             tries-= 1
             sleep(5)
+    
+    return redirect(url_for('index'))
