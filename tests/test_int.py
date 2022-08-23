@@ -12,7 +12,7 @@ class TestBase(LiveServerTestCase):
     def create_app(self):
 
         app.config.update(
-            SQLALCHEMY_DATABASE_URI="sqlite:///test.db",
+            SQLALCHEMY_DATABASE_URI="sqlite:///",
             LIVESERVER_PORT=self.TEST_PORT,
             
             DEBUG=True,
