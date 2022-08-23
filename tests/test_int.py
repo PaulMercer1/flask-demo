@@ -16,6 +16,9 @@ class TestBase(LiveServerTestCase):
             TESTING=True
         )
         return app
+
+def setUp(self):
+        db.create_all() # create schema before we try to get the page
 class TestAdd(TestBase):
    
     def test_index_route(self):
