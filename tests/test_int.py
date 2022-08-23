@@ -3,8 +3,6 @@ from urllib.request import urlopen
 from flask import url_for
 
 from application import app, db
-from application.models import Games
-
 class TestBase(LiveServerTestCase):
     TEST_PORT = 5050 # test port, doesn't need to be open
 
@@ -18,7 +16,8 @@ class TestBase(LiveServerTestCase):
         return app
 
 def setUp(self):
-        db.create_all() # create schema before we try to get the page
+    from application.models import Games
+    db.create_all() # create schema before we try to get the page
 class TestAdd(TestBase):
    
     def test_index_route(self):
