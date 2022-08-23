@@ -4,6 +4,5 @@ flask_wtf
 flask_testing
 wtforms
 pymysql
-selenium
 pytest
 cryptography
