@@ -24,6 +24,9 @@ def setUp(self):
     db.session.add(test_game)
     db.session.commit()
 
+def tearDown(self):
+    db.session.remove()
+    db.drop_all()
 class TestAdd(TestBase):
    
     def test_index_route(self):
