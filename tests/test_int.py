@@ -16,17 +16,17 @@ class TestBase(LiveServerTestCase):
         )
         return app
 
-def setUp(self):
-    from application.models import Games
-    db.create_all() # create schema before we try to get the page
+    def setUp(self):
+        from application.models import Games
+        db.create_all() # create schema before we try to get the page
 
-    test_game = Games(name:= "Test")
-    db.session.add(test_game)
-    db.session.commit()
+        test_game = Games(name:= "Test")
+        db.session.add(test_game)
+        db.session.commit()
 
-def tearDown(self):
-    db.session.remove()
-    db.drop_all()
+    def tearDown(self):
+        db.session.remove()
+        db.drop_all()
 class TestAdd(TestBase):
    
     def test_index_route(self):
