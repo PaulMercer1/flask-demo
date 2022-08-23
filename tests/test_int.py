@@ -1,3 +1,4 @@
+from unicodedata import name
 from flask_testing import LiveServerTestCase
 from urllib.request import urlopen
 from flask import url_for
@@ -18,6 +19,11 @@ class TestBase(LiveServerTestCase):
 def setUp(self):
     from application.models import Games
     db.create_all() # create schema before we try to get the page
+
+    test_game = Games(name:= "Test")
+    db.session.add(test_game)
+    db.session.commit()
+
 class TestAdd(TestBase):
    
     def test_index_route(self):
