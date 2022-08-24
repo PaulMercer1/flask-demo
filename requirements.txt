@@ -1,5 +1,5 @@
 flask
-flask_sqlalchemy
+flask-sqlalchemy
 flask_wtf
 flask_testing
 wtforms
