@@ -5,12 +5,13 @@ EXPOSE 5000
 WORKDIR /app
 ENV db_connection="sqlite:///data.db"
 
-# install pip updates
-RUN python -m pip install --upgrade pip
+# install dependencies
+RUN apk add build-base && \
+    python -m pip install --upgrade pip
 COPY requirements.txt .
 
 # install requirements
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt --no-cache-dir
 COPY . .
 
 ENTRYPOINT python -u app.py
