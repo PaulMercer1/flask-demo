@@ -5,7 +5,6 @@ EXPOSE 5000
 WORKDIR /app
 ENV db_connection="sqlite:///data.db"
 
-# install dependencies
 RUN apk add build-base && \
     python -m pip install --upgrade pip
 COPY requirements.txt .
