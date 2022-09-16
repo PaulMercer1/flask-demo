@@ -7,4 +7,3 @@ wtforms
 pymysql
 pytest
 cryptography
-greenlet
