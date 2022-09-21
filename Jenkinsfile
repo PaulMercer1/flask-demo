@@ -11,12 +11,12 @@ pipeline {
 
             stage ('Testing'){
                 steps{
-                    sh 'pip install -r requirements.txt'
-                    sh 'pytest-3 --junitxml results.xml'
+                    sh 'pip3 install -r requirements.txt'
+                    sh 'pytest --junitxml results.xml'
                 }
             }
 
-             stage ('Goodbye')
+            stage ('Goodbye')
             {
                 steps {
                     sh 'echo goodbye World'
