@@ -6,5 +6,3 @@ flask_sqlalchemy
 wtforms
 pymysql
 pytest
-cryptography
-greenlet
